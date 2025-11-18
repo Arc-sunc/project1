@@ -479,7 +479,7 @@ img {
   line-height: 1.6;
 }
 
-.thank-you {
+.section.thank-you {
   text-align: center;
   background: linear-gradient(180deg, #5c1224, #a11933);
   color: #fff;
