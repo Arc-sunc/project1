@@ -480,6 +480,9 @@ img {
 }
 
 .section.thank-you {
+  .section.thank-you .section-heading h2 {
+    text-align: center;
+  }
   text-align: center;
   background: linear-gradient(180deg, #5c1224, #a11933);
   color: #fff;
