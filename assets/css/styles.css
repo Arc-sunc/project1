@@ -479,13 +479,16 @@ img {
   line-height: 1.6;
 }
 
-.section.thank-you {
-  .section.thank-you .section-heading h2 {
-    text-align: center;
-  }
+.thank-you {
   text-align: center;
   background: linear-gradient(180deg, #5c1224, #a11933);
   color: #fff;
+}
+
+.thank-you .section-heading h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .thank-you::after {
@@ -496,6 +499,7 @@ img {
   font-size: 1.3rem;
   max-width: 720px;
   margin: 0 auto 2rem;
+  text-align: center;
 }
 
 footer {
