@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Rhythm of Heritage</title>
+  <link rel="icon" type="image/png" href="assets/images/rhythm-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/india2019Low.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+<body>
+  <div class="top-pattern" aria-hidden="true"></div>
+  <header class="hero" id="top">
+    <div class="hero-overlay"></div>
+    <div class="hero-flower" aria-hidden="true"></div>
+    <img src="./rhythmlogo.png" alt="The Rhythm of Heritage logo" class="hero-logo" data-aos="fade-down" />
+    <p class="tagline" data-aos="fade-up" data-aos-delay="150">Spin and Sway, the Folk Way!</p>
+    <h1 data-aos="zoom-in" data-aos-delay="300">The Rhythm of Heritage</h1>
+    <p class="hero-subtext" data-aos="fade-up" data-aos-delay="450">A folk dance fair with heritage in the air.</p>
+    <button class="cta" data-scroll="#introduction" data-aos="fade-up" data-aos-delay="600">Know More</button>
+    <div class="hero-pattern" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section id="site-index" class="section index-nav">
+      <div class="section-heading" data-aos="fade-up">
+        <p class="eyebrow">00 • Navigate</p>
+        <h2>Journey through the rhythm</h2>
+        <p class="lead">Jump straight to the stories you want.</p>
+      </div>
+      <div class="index-links" data-aos="fade-up" data-aos-delay="100">
+        <button class="index-link" data-scroll="#introduction">Introduction</button>
+        <button class="index-link" data-scroll="#map">Interactive Map</button>
+        <button class="index-link" data-scroll="#state-details">State-Wise Details</button>
+        <button class="index-link" data-scroll="#gratitude">Thank You</button>
+      </div>
+    </section>
+
+    <section id="introduction" class="section intro">
+      <div class="section-heading" data-aos="fade-right">
+        <p class="eyebrow">01 • Introduction</p>
+        <h2>Why folk dances, why now?</h2>
+        <p class="lead">Decline Of Folk Dances In Urban Culture</p>
+      </div>
+      <div class="intro-grid">
+        <article data-aos="fade-up">
+          <h3>What Are Folk Dances?</h3>
+          <p>Folk dances are traditional dances that come from the customs and culture of a particular group of people. They are usually performed by ordinary people to celebrate festivals, events, or daily life.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="100">
+          <h3>Are Folk Dances Important?</h3>
+          <p>Folk dances keep culture, traditions, and stories alive. They bring people together, celebrate heritage, and pass on values and customs to future generations.</p>
+        </article>
+        <article data-aos="fade-up" data-aos-delay="200">
+          <h3>Why This?</h3>
+          <p>Folk dance is crucial today because it's a living museum, safeguarding a community's unique history and cultural identity against globalization. It powerfully fosters social unity and intergenerational connection during festivals and community events, keeping traditions vibrant and accessible.</p>
+        </article>
+      </div>
+      <div class="issue-card" data-aos="zoom-in">
+        <p>Main Aim:- To Revive The Various Folk Dances Of India And Spread Awareness About How These Dance Forms Are Declining.</p>
+      </div>
+    </section>
+
+    <section class="section heritage-strip" aria-label="Folk dance motifs">
+      <div class="heritage-row" data-aos="zoom-in">
+        <div class="motif motif-dancer" data-aos="fade-up" data-aos-delay="50">
+          <span class="dancer-body"></span>
+          <span class="dancer-skirt"></span>
+        </div>
+        <div class="motif motif-lamp" data-aos="fade-up" data-aos-delay="150">
+          <span class="lamp-base"></span>
+          <span class="lamp-flame"></span>
+        </div>
+        <div class="motif motif-drum" data-aos="fade-up" data-aos-delay="250">
+          <span class="drum-body"></span>
+          <span class="drum-stick left"></span>
+          <span class="drum-stick right"></span>
+        </div>
+        <div class="motif motif-dancer" data-aos="fade-up" data-aos-delay="350">
+          <span class="dancer-body"></span>
+          <span class="dancer-skirt"></span>
+        </div>
+      </div>
+      <p class="motif-caption" data-aos="fade-up">
+        A twirl of ghungroos, a glow of diyas, and the pulse of the dhol — the rhythm never stops.
+      </p>
+    </section>
+
+    <section id="map" class="section map">
+      <div class="section-heading" data-aos="fade-right">
+        <p class="eyebrow">02 • Interactive Map</p>
+        <h2>India’s folk brilliance</h2>
+      </div>
+      <div class="map-wrapper">
+        <div id="indiaMap" aria-label="Interactive map of India" data-aos="fade-up"></div>
+        <aside id="stateInfo" class="state-info" aria-live="polite" data-aos="fade-left">
+          <h3>Select a highlighted state</h3>
+          <p>Hover or tap on Kerala, Maharashtra, Haryana, Mizoram, Bengal, or Tamil Nadu to discover their folk dances.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="state-details" class="section details">
+      <div class="section-heading" data-aos="fade-right">
+        <p class="eyebrow">03 • State-Wise Details</p>
+        <h2>Dances in full color</h2>
+      </div>
+      <div class="state-cards" id="stateCards"></div>
+    </section>
+  </main>
+
+  <section id="gratitude" class="section thank-you">
+    <div class="section-heading" data-aos="fade-up">
+      <p class="eyebrow">04 • Thank You</p>
+      <h2>With Heritage In The Air</h2>
+    </div>
+    <p class="closing" data-aos="zoom-in">A Folk dance fair, with Heritage in the air!</p>
+    <footer>
+      <p>Credits: Hamsini • Shiza • Nashwa • Sonal</p>
+      <a href="#top" class="back-top" aria-label="Back to top">Back to top</a>
+    </footer>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
