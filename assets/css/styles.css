@@ -8,7 +8,7 @@
   --text-dark: #2c0f14;
   --serif: 'Prata', 'Times New Roman', serif;
   --sans: 'Nunito', 'Helvetica Neue', sans-serif;
-  --hero-title-opacity: 0;
+  --hero-title-opacity: 1;
 }
 
 * {
@@ -513,7 +513,7 @@ img {
   margin-right: auto;
 }
 
-.thank-you::after {
+.section.thank-you::after {
   display: none;
 }
 

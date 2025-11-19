@@ -331,9 +331,9 @@ const setupHeroTitleFade = () => {
 
   const updateOpacity = () => {
     const heroHeight = hero.offsetHeight || 1;
-    const fadeInDistance = heroHeight * 0.4;
+    const fadeOutDistance = heroHeight * 0.5;
     const scrollY = window.scrollY;
-    const opacity = Math.max(0, Math.min(1, scrollY / fadeInDistance));
+    const opacity = Math.max(0, Math.min(1, 1 - scrollY / fadeOutDistance));
     rootEl.style.setProperty('--hero-title-opacity', opacity.toFixed(2));
     ticking = false;
   };
