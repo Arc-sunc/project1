@@ -147,6 +147,7 @@ const danceData = {
 
 const stateInfoPanel = document.getElementById('stateInfo');
 const stateCardsContainer = document.getElementById('stateCards');
+const rootEl = document.documentElement;
 
 const renderInfoPanel = (stateKey) => {
   const state = danceData[stateKey];
@@ -323,6 +324,32 @@ const initMap = () => {
   });
 };
 
+const setupHeroTitleFade = () => {
+  const hero = document.querySelector('.hero');
+  if (!hero || !rootEl) return;
+  let ticking = false;
+
+  const updateOpacity = () => {
+    const heroHeight = hero.offsetHeight || 1;
+    const fadeInDistance = heroHeight * 0.4;
+    const scrollY = window.scrollY;
+    const opacity = Math.max(0, Math.min(1, scrollY / fadeInDistance));
+    rootEl.style.setProperty('--hero-title-opacity', opacity.toFixed(2));
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateOpacity);
+      ticking = true;
+    }
+  };
+
+  updateOpacity();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateOpacity);
+};
+
 const initPage = () => {
   document.body.classList.add('page-loaded');
   if (window.AOS) {
@@ -331,6 +358,7 @@ const initPage = () => {
   setupScrollButtons();
   renderCards();
   initMap();
+  setupHeroTitleFade();
 };
 
 document.addEventListener('DOMContentLoaded', initPage);

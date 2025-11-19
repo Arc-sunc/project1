@@ -8,6 +8,7 @@
   --text-dark: #2c0f14;
   --serif: 'Prata', 'Times New Roman', serif;
   --sans: 'Nunito', 'Helvetica Neue', sans-serif;
+  --hero-title-opacity: 0;
 }
 
 * {
@@ -146,6 +147,8 @@ img {
   -webkit-background-clip: text;
   color: transparent;
   text-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  opacity: var(--hero-title-opacity);
+  transition: opacity 0.2s ease-out;
 }
 
 .tagline {
