@@ -239,36 +239,54 @@ const initMap = () => {
     );
 
     const highlightStates = Object.values(danceData).map((state) => state.stateCode);
+    let currentStateKey = null;
+    const calmColor = am5.color(0xfbe3d3);
+    const baseColor = am5.color(0xe76432);
+    const focusColor = am5.color(0xffb347);
 
     polygonSeries.mapPolygons.template.setAll({
       tooltipText: '{name}',
       interactive: true,
       stroke: am5.color(0xffffff),
       strokeWidth: 0.7,
-      fill: am5.color(0xfbe3d3)
+      fill: calmColor,
+      cursorOverStyle: 'pointer',
+      fillOpacity: 0.95
+    });
+
+    polygonSeries.mapPolygons.template.states.create('hover', {
+      fill: am5.color(0xffc46c),
+      strokeWidth: 1.2
     });
 
     polygonSeries.mapPolygons.template.adapters.add('fill', (fill, target) => {
       const id = target.dataItem?.dataContext?.id;
       if (highlightStates.includes(id)) {
-        return am5.color(0xe76432);
+        return baseColor;
       }
-      return am5.color(0xfbe3d3);
+      return calmColor;
     });
+
+    const animateFill = (polygon, color, duration = 600) => {
+      if (!polygon) return;
+      polygon.animate({
+        key: 'fill',
+        to: color,
+        duration,
+        easing: am5.ease.out(am5.ease.cubic)
+      });
+    };
 
     const focusState = (polygon) => {
       const id = polygon.dataItem?.dataContext?.id;
       const stateKey = Object.keys(danceData).find((key) => danceData[key].stateCode === id);
-      if (!stateKey) return;
+      if (!stateKey || stateKey === currentStateKey) return;
+      currentStateKey = stateKey;
       renderInfoPanel(stateKey);
       polygonSeries.mapPolygons.each((poly) => {
         const polyId = poly.dataItem?.dataContext?.id;
         if (highlightStates.includes(polyId)) {
-          poly.animate({
-            key: 'fill',
-            to: poly === polygon ? am5.color(0xffb347) : am5.color(0xe76432),
-            duration: 400
-          });
+          animateFill(poly, poly === polygon ? focusColor : baseColor, poly === polygon ? 650 : 500);
         }
       });
     };
@@ -277,7 +295,18 @@ const initMap = () => {
       const polygon = event.target;
       const id = polygon.dataItem?.dataContext?.id;
       if (highlightStates.includes(id)) {
+        animateFill(polygon, focusColor, 450);
         focusState(polygon);
+      }
+    });
+
+    polygonSeries.mapPolygons.template.events.on('pointerout', (event) => {
+      const polygon = event.target;
+      const id = polygon.dataItem?.dataContext?.id;
+      if (highlightStates.includes(id)) {
+        const matchesSelection =
+          currentStateKey && danceData[currentStateKey]?.stateCode === id;
+        animateFill(polygon, matchesSelection ? focusColor : baseColor, 550);
       }
     });
 
@@ -288,6 +317,9 @@ const initMap = () => {
         focusState(polygon);
       }
     });
+
+    chart.appear(1000, 200);
+    polygonSeries.appear(1000, 200);
   });
 };
 
