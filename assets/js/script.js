@@ -350,6 +350,14 @@ const setupHeroTitleFade = () => {
   window.addEventListener('resize', updateOpacity);
 };
 
+const updateProgressBar = () => {
+  const doc = document.documentElement;
+  const scrollTop = doc.scrollTop || document.body.scrollTop;
+  const scrollHeight = doc.scrollHeight - doc.clientHeight;
+  const percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  rootEl.style.setProperty('--scroll-progress', `${percent.toFixed(2)}%`);
+};
+
 const initPage = () => {
   document.body.classList.add('page-loaded');
   if (window.AOS) {
@@ -359,6 +367,8 @@ const initPage = () => {
   renderCards();
   initMap();
   setupHeroTitleFade();
+  updateProgressBar();
+  window.addEventListener('scroll', updateProgressBar, { passive: true });
 };
 
 document.addEventListener('DOMContentLoaded', initPage);
