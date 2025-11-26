@@ -19,7 +19,7 @@ const danceData = {
         name: 'Kolkali',
         description:
           'Kolkali is a folk art performed in the Malabar region of Kerala, India. The dance performers move in a circle, striking small sticks and keeping rhythm with special steps. The circle expands and contracts as the dance progress. The accompanying music gradually rises in pitch and the dance reaches its climax.',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Kolkali-Parichakali_folk_dance.jpg'
+        image: './assets/images/kolkali.png'
       }
     ]
   },
@@ -55,19 +55,19 @@ const danceData = {
         name: 'Jhumar',
         description:
           'Jhumar is a graceful folk dance popular in Haryana, Punjab, and parts of Rajasthan. It features gentle, rhythmic movements in circular patterns to the tune of soft music and songs of love and happiness. The dance is often performed after harvests and during festive gatherings, symbolizing joy and prosperity.',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Jumar_Dance.jpg'
+        image: './assets/images/jhumar.png'
       },
       {
         name: 'Gugga Dance',
         description:
           'The Gugga dance is a traditional folk dance of Haryana and parts of Rajasthan, performed in honor of Gugga Pir, a local deity believed to protect against snakebites. Devotees dance energetically to the beat of drums and folk songs during processions and fairs, reflecting deep faith and community devotion.',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/4/43/2017-02-05_15-24-50_carnaval-riedisheim.jpg'
+        image: './assets/images/gugga.png'
       },
       {
         name: 'Phag or Phalgun',
         description:
           'The Phag or Phalgun dance is a lively folk dance of Haryana, performed during the month of Phalgun (February–March) to celebrate the arrival of spring and the harvest season. Men and women dance together with joyful movements and songs that express love, happiness, and the spirit of rural life.',
-        image: './assets/images/phag.jpg'
+        image: './assets/images/phalgun.png'
       }
     ]
   },
@@ -139,7 +139,7 @@ const danceData = {
         name: 'Oyilattam',
         description:
           'The Oyilattam, meaning “Dance of Grace,” is a folk dance of Tamil Nadu performed by men (and sometimes women) in colorful costumes, accompanied by drums and traditional music. Dancers move rhythmically in rows or circles, combining graceful steps with energetic movements that express joy and celebration.',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/8/80/OYILATTAM_%28Tamil_culture%29.jpg'
+        image: './assets/images/oyilattam.png'
       }
     ]
   }
