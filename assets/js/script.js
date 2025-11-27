@@ -91,7 +91,7 @@ const danceData = {
         name: 'Tlanglam Dance',
         description:
           'The Tlanglam Dance is a vibrant and elegant Mizo group dance that symbolizes joy and unity. It is performed by both men and women dressed in colorful traditional attire, moving in well-coordinated patterns to the rhythm of traditional instruments. Originally performed during festive occasions and village celebrations, the dance represents harmony and the collective spirit of the Mizo people.',
-        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80'
+        image: './assets/images/tlanglam.png'
       }
     ]
   },
